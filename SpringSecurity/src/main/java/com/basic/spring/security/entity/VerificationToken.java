@@ -32,6 +32,12 @@ public class VerificationToken {
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "emp_id", nullable = false, foreignKey = @ForeignKey(name = "FK_EMP_VERIFY_TOKEN"))
 	private Employee employee;
+	
+
+	public VerificationToken() {
+		super();
+
+	}
 
 	public VerificationToken(Employee employee, String token) {
 

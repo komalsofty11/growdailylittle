@@ -50,7 +50,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		Employee employee = verificationToken.getEmployee();
 		Calendar calendar = Calendar.getInstance();
 
-		if (verificationToken.getExpirationTime().getTime() - calendar.getTime().getTime() <= 0) {
+		if ((verificationToken.getExpirationTime().getTime() - calendar.getTime().getTime()) <= 0) {
 
 			verificationTokenRepository.delete(verificationToken);
 			return "expired";
